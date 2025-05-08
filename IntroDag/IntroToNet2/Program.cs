@@ -1,11 +1,17 @@
-﻿
-class Program
+﻿class Program
 {
-    static void Main(string[] args) //Metoda
+    static void Main(string[] args) //Metode
     {
-        Console.WriteLine("Hva er navnet ditt?"); //Wyświetlamy tekst na ekranie
-        var text = Console.ReadLine(); //Czekamy na naciśnięcie klawisza
-        Console.WriteLine(text); // Wyświetlamy tekst na ekranie
-        Console.ReadLine();
+        var name = Ask("What is your name? "); //Variabel
+
+        var location = Ask("Where do you live? "); //Variabel
+        Console.WriteLine($"Hei, {name}. Du bor i {location}"); //Interpolering
     }
+
+    static string Ask(string question)
+    {
+        Console.Write(question);
+        return Console.ReadLine();
+    }
+
 }
