@@ -24,6 +24,9 @@ namespace Test
                 {
                     test.ReadNumbers();  // Jeg ber igjen om to tall
                     test.EqualNumbers(); // Jeg sjekker igjen om tallene er like
+                    Console.WriteLine("Tester om noen av tallene er 30, eller summen blir 30.");
+                    bool isThirty = test.isEqualTo30(test.GetNumber(), test.GetNumber2());
+                    Console.WriteLine($"Resultat av isEqualTo30: {isThirty}");
                 }
                 else if (answer == "N")
                 {
@@ -114,5 +117,29 @@ namespace Test
             // Jeg viser resultatet etter jeg har endret på tallene
             Console.WriteLine($"Tall etter økning: {number}, \nTall etter subtraksjon: {number2}");
         }
+
+        // Jeg lager en metode som tar inn to tall og returnerer true hvis en av dem, eller summen når 30
+        public bool isEqualTo30(int a, int b)
+        {
+            if (a == 30 || b == 30 || (a + b) == 30)
+            {
+                return true; // Jeg returnerer true hvis en av dem er 30 eller summen er 30
+            }
+            else
+            {
+                return false; // Jeg returnerer false hvis ingen av dem er 30  d
+            }
+        }
+        // metode for å hente det første tallet
+        public int GetNumber()
+        {
+            return number; // Jeg returnerer det første tallet
+        }
+        // metode for å hente det andre tallet
+        public int GetNumber2()
+        {
+            return number2; // Jeg returnerer det andre tallet
+        }
+
     }
 }
